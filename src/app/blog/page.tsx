@@ -1,3 +1,5 @@
+"use client";
+
 import data from "@/data/portfolio.json";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock } from "lucide-react";
@@ -23,7 +25,7 @@ export default function BlogPage() {
           Thoughts on frontend engineering, architecture, and the craft of building great software.
         </p>
 
-        <div className="flex flex-col divide-y" style={{ borderColor: "var(--border)" }}>
+        <div className="flex flex-col" style={{ borderTop: "1px solid var(--border)" }}>
           {data.blog.map((post, i) => (
             <ArticleRow key={post.id} post={post} index={i} />
           ))}
@@ -33,7 +35,9 @@ export default function BlogPage() {
   );
 }
 
-function ArticleRow({ post, index }: { post: typeof data.blog[0]; index: number }) {
+type BlogPost = typeof data.blog[0];
+
+function ArticleRow({ post, index }: { post: BlogPost; index: number }) {
   const date = new Date(post.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -48,7 +52,8 @@ function ArticleRow({ post, index }: { post: typeof data.blog[0]; index: number 
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.4 }}
       whileHover="hover"
-      className="group flex items-start justify-between gap-6 py-8 transition-colors"
+      className="group flex items-start justify-between gap-6 py-8"
+      style={{ borderBottom: "1px solid var(--border)" }}
     >
       <div className="flex-1">
         <div className="flex items-center gap-3 mb-2 flex-wrap">
@@ -67,8 +72,10 @@ function ArticleRow({ post, index }: { post: typeof data.blog[0]; index: number 
           ))}
         </div>
         <h2
-          className="text-xl font-bold mb-2 transition-colors group-hover:text-accent"
+          className="text-xl font-bold mb-2 transition-colors"
           style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
         >
           {post.title}
         </h2>

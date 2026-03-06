@@ -3,19 +3,20 @@
     "name": "REZOUGUI Rayan Zin Eddine",
     "title": "Full Stack Web Developer",
     "tagline": "Building scalable web and mobile applications with modern technologies.",
-    "email": "contact@example.com",
-    "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername",
+    "email": "rayan03rezougui@gmail.com",
+    "github": "https://github.com/D-Rayno",
+    "linkedin": "https://www.linkedin.com/in/rezougui-rayan-zin-eddine",
+    "gitlab": "https://gitlab.com/rayan03rezougui",
     "location": "Algeria",
     "available": true,
     "availableText": "Open to new opportunities",
     "bio": "I'm a Full Stack Developer based in Algeria with a deep passion for building digital products that are fast, beautiful, and maintainable. I specialize in React ecosystems, Node.js back-ends, and mobile applications with React Native.",
     "bioLong": "I started coding at 17, driven by curiosity about how websites worked. Over the years I've grown from building simple HTML pages to architecting full-stack SaaS platforms with real-time features, complex data pipelines, and polished mobile apps.\n\nI believe that great software is invisible — it gets out of the user's way and just works. I apply that principle to every project I take on, whether it's a fintech dashboard with thousands of daily users or a teaching curriculum designed to inspire the next generation of developers.\n\nWhen I'm not coding, I'm writing about what I learn, mentoring students, or exploring new technologies that challenge my assumptions.",
-    "photo": "/avatar-placeholder.jpg"
+    "photo": "/avatar.webp"
   },
   "stats": [
-    { "id": "s1", "value": "2+", "label": "Years of Experience" },
-    { "id": "s2", "value": "10+", "label": "Projects Delivered" },
+    { "id": "s1", "value": "4+", "label": "Years of Experience" },
+    { "id": "s2", "value": "20+", "label": "Projects Delivered" },
     { "id": "s3", "value": "15+", "label": "Students Taught" },
     { "id": "s4", "value": "5+", "label": "Technologies Mastered" }
   ],
@@ -74,14 +75,20 @@
     "currentlyLearning": ["Rust", "WebAssembly", "Three.js"]
   },
   "skills": [
-    "Next.js",
+    "Vue js",
+    "React js",
+    "Next js",
+    "Nuxt js",
     "React Native",
     "TypeScript",
-    "NestJS",
+    "Node js",
+    "Php",
+    "Express js",
+    "Laravel",
     "PostgreSQL",
+    "MySQL",
     "Tailwind CSS",
-    "Docker",
-    "Framer Motion"
+    "Docker"
   ],
   "skillsByCategory": [
     {

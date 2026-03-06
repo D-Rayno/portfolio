@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
 import { MapPin, Sparkles, BookOpen, Zap } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -16,7 +17,10 @@ export default function AboutPage() {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <MapPin size={13} style={{ color: "var(--accent)" }} />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "var(--text-tertiary)" }}>
+              <span
+                className="text-xs font-bold tracking-[0.2em] uppercase"
+                style={{ color: "var(--text-tertiary)" }}
+              >
                 {data.personal.location}
               </span>
             </div>
@@ -26,13 +30,18 @@ export default function AboutPage() {
             >
               Hey, I&apos;m Rayan.
             </h1>
-            <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--text-secondary)" }}>
+            <p
+              className="text-lg leading-relaxed mb-8"
+              style={{ color: "var(--text-secondary)" }}
+            >
               {data.personal.bio}
             </p>
-            <Button href="/contact" variant="primary">Let&apos;s work together</Button>
+            <Button href="/contact" variant="primary">
+              Let&apos;s work together
+            </Button>
           </div>
 
-          {/* Avatar placeholder */}
+          {/* Avatar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -40,18 +49,23 @@ export default function AboutPage() {
             className="relative aspect-square max-w-xs mx-auto md:mx-0 rounded-3xl border overflow-hidden"
             style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-elevated)" }}
           >
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{ color: "var(--text-tertiary)" }}>
-              <div
-                className="w-24 h-24 rounded-full flex items-center justify-center text-3xl font-extrabold"
-                style={{ backgroundColor: "var(--accent-muted)", color: "var(--accent)", fontFamily: "var(--font-display)" }}
-              >
-                RZE
-              </div>
-              <span className="text-xs tracking-widest uppercase">Photo coming soon</span>
-            </div>
+            {/* Real photo — place your image at /public/assets/avatar.webp */}
+            <Image
+              src="/assets/avatar.webp"
+              alt="Rayan Zin Eddine"
+              fill
+              sizes="(max-width: 768px) 280px, 320px"
+              className="object-cover object-top"
+              priority
+              // Fallback handled by the placeholder below via onError
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).style.display = "none";
+              }}
+            />
+
             {/* Decorative corner accent */}
             <div
-              className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-full"
+              className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-full pointer-events-none"
               style={{ backgroundColor: "var(--accent-muted)" }}
             />
           </motion.div>
@@ -68,7 +82,11 @@ export default function AboutPage() {
             My story
           </h2>
           {data.personal.bioLong.split("\n\n").map((para, i) => (
-            <p key={i} className="mb-5 leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+            <p
+              key={i}
+              className="mb-5 leading-relaxed"
+              style={{ color: "var(--text-secondary)" }}
+            >
               {para}
             </p>
           ))}
@@ -81,7 +99,7 @@ export default function AboutPage() {
           className="text-3xl font-extrabold mb-10"
           style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}
         >
-          Skills & Tools
+          Skills &amp; Tools
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {data.skillsByCategory.map((cat, ci) => (
@@ -102,7 +120,11 @@ export default function AboutPage() {
               </h3>
               <div className="flex flex-col gap-2">
                 {cat.items.map((item) => (
-                  <span key={item} className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <span
+                    key={item}
+                    className="text-sm"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     {item}
                   </span>
                 ))}
@@ -112,39 +134,66 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      {/* Extras: hobbies + currently learning */}
+      {/* Interests / Learning / Philosophy */}
       <AnimatedSection>
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl border" style={{ backgroundColor: "var(--bg-surface)", borderColor: "var(--border)" }}>
+          <div
+            className="p-6 rounded-2xl border"
+            style={{ backgroundColor: "var(--bg-surface)", borderColor: "var(--border)" }}
+          >
             <Sparkles size={18} className="mb-4" style={{ color: "var(--accent)" }} />
-            <h3 className="font-bold mb-3" style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}>Interests</h3>
+            <h3
+              className="font-bold mb-3"
+              style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}
+            >
+              Interests
+            </h3>
             <ul className="flex flex-col gap-1.5">
               {data.about.hobbies.map((h) => (
-                <li key={h} className="text-sm" style={{ color: "var(--text-secondary)" }}>— {h}</li>
+                <li key={h} className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  — {h}
+                </li>
               ))}
             </ul>
           </div>
 
-          <div className="p-6 rounded-2xl border" style={{ backgroundColor: "var(--bg-surface)", borderColor: "var(--border)" }}>
+          <div
+            className="p-6 rounded-2xl border"
+            style={{ backgroundColor: "var(--bg-surface)", borderColor: "var(--border)" }}
+          >
             <Zap size={18} className="mb-4" style={{ color: "var(--accent)" }} />
-            <h3 className="font-bold mb-3" style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}>Currently Learning</h3>
+            <h3
+              className="font-bold mb-3"
+              style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}
+            >
+              Currently Learning
+            </h3>
             <ul className="flex flex-col gap-1.5">
               {data.about.currentlyLearning.map((h) => (
-                <li key={h} className="text-sm" style={{ color: "var(--text-secondary)" }}>— {h}</li>
+                <li key={h} className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  — {h}
+                </li>
               ))}
             </ul>
           </div>
 
-          <div className="p-6 rounded-2xl border" style={{ backgroundColor: "var(--bg-surface)", borderColor: "var(--border)" }}>
+          <div
+            className="p-6 rounded-2xl border"
+            style={{ backgroundColor: "var(--bg-surface)", borderColor: "var(--border)" }}
+          >
             <BookOpen size={18} className="mb-4" style={{ color: "var(--accent)" }} />
-            <h3 className="font-bold mb-3" style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}>Philosophy</h3>
+            <h3
+              className="font-bold mb-3"
+              style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}
+            >
+              Philosophy
+            </h3>
             <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
               {data.about.passion}
             </p>
           </div>
         </div>
       </AnimatedSection>
-
     </main>
   );
 }
