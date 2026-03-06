@@ -75,16 +75,22 @@
     "currentlyLearning": ["Rust", "WebAssembly", "Three.js"]
   },
   "skills": [
-    "Vue js",
-    "React js",
-    "Next js",
-    "Nuxt js",
+    "Vue JS",
+    "React JS",
+    "Next JS",
+    "Nuxt JS",
     "React Native",
-    "TypeScript",
-    "Node js",
+    "Ionic & Capacitor",
+    "Tauri",
+    "Odoo",
+    "Python",
+    "Java",
+    "JavaScript & TypeScript",
+    "Node JS",
     "Php",
-    "Express js",
+    "Express JS",
     "Laravel",
+    "Supabase",
     "PostgreSQL",
     "MySQL",
     "Tailwind CSS",
@@ -101,7 +107,7 @@
     },
     {
       "category": "Backend",
-      "items": ["NestJS", "Node.js", "PostgreSQL", "Prisma", "REST APIs", "GraphQL"]
+      "items": ["Node.js", "PostgreSQL", "REST APIs", "GraphQL"]
     },
     {
       "category": "DevOps & Tools",
@@ -150,7 +156,7 @@
     {
       "id": "e1",
       "role": "Web Development Teacher",
-      "company": "Private Academy",
+      "company": "Rising Academy",
       "period": "Feb 2026 - Present",
       "description": "Instructing beginner-level students in the fundamentals of web development, focusing on practical, hands-on projects."
     },
@@ -158,7 +164,7 @@
       "id": "e2",
       "role": "Software Engineer",
       "company": "Aymen Promotion",
-      "period": "Aug 2025 - Present",
+      "period": "Aug 2025 - Feb 2025",
       "description": "Developing and maintaining internal software solutions and digital infrastructure for real estate development."
     }
   ],
