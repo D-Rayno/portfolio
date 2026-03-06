@@ -4,33 +4,70 @@ import { motion, cubicBezier } from "framer-motion";
 import { Github, Linkedin, MapPin, Mail, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 
+// GitLab SVG icon (inline, no dependency)
+function GitLabIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 01-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 014.82 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0118.6 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.51L23 13.45a.84.84 0 01-.35.94z"/>
+    </svg>
+  );
+}
+
 interface Personal {
   name: string; tagline: string; email: string;
-  github: string; linkedin: string; location: string;
-  title: string; available: boolean; availableText: string;
+  github: string; gitlab?: string; linkedin: string;
+  location: string; title: string;
+  available: boolean; availableText: string;
 }
 
 const letterVariants = {
   hidden: { opacity: 0, y: 40, skewY: 4 },
   visible: (i: number) => ({
     opacity: 1, y: 0, skewY: 0,
-    transition: { delay: i * 0.03, duration: 0.45, ease: cubicBezier(0.25, 0.46, 0.45, 0.94) },
+    transition: {
+      delay: i * 0.03, duration: 0.45,
+      ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
+    },
   }),
 };
+
+const socialLinks = [
+  {
+    key: "github",
+    label: "GitHub",
+    icon: <Github size={14} />,
+    getHref: (p: Personal) => p.github,
+  },
+  {
+    key: "gitlab",
+    label: "GitLab",
+    icon: <GitLabIcon size={14} />,
+    getHref: (p: Personal) => p.gitlab ?? "",
+  },
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+    icon: <Linkedin size={14} />,
+    getHref: (p: Personal) => p.linkedin,
+  },
+];
 
 export default function HeroSection({ personal }: { personal: Personal }) {
   const nameParts = personal.name.split(" ");
 
   return (
     <section className="min-h-[65vh] flex flex-col justify-center pt-4">
-      {/* Top row: location + available badge */}
+      {/* Location + available badge */}
       <motion.div
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.05 }}
         className="flex items-center gap-4 mb-8 flex-wrap"
       >
-        <span className="flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase" style={{ color: "var(--text-tertiary)" }}>
+        <span
+          className="flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase"
+          style={{ color: "var(--text-tertiary)" }}
+        >
           <MapPin size={11} /> {personal.location}
         </span>
         {personal.available && (
@@ -46,13 +83,16 @@ export default function HeroSection({ personal }: { personal: Personal }) {
               fontFamily: "var(--font-display)",
             }}
           >
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "var(--accent)" }} />
+            <span
+              className="w-1.5 h-1.5 rounded-full animate-pulse"
+              style={{ backgroundColor: "var(--accent)" }}
+            />
             {personal.availableText}
           </motion.span>
         )}
       </motion.div>
 
-      {/* Name */}
+      {/* Name letter-by-letter */}
       <h1
         className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-6"
         style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}
@@ -86,7 +126,7 @@ export default function HeroSection({ personal }: { personal: Personal }) {
         {personal.tagline}
       </motion.p>
 
-      {/* Actions */}
+      {/* CTA buttons */}
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
@@ -101,26 +141,35 @@ export default function HeroSection({ personal }: { personal: Personal }) {
         </Button>
       </motion.div>
 
-      {/* Social links */}
+      {/* Social links — GitHub · GitLab · LinkedIn */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="flex items-center gap-4"
+        className="flex items-center gap-3 flex-wrap"
       >
-        <a href={personal.github} className="flex items-center gap-1.5 text-xs font-medium transition-colors" style={{ color: "var(--text-tertiary)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-tertiary)")}
-        >
-          <Github size={14} /> GitHub
-        </a>
-        <span style={{ color: "var(--border)" }}>·</span>
-        <a href={personal.linkedin} className="flex items-center gap-1.5 text-xs font-medium transition-colors" style={{ color: "var(--text-tertiary)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-tertiary)")}
-        >
-          <Linkedin size={14} /> LinkedIn
-        </a>
+        {socialLinks.map((s, idx) => {
+          const href = s.getHref(personal);
+          if (!href) return null;
+          return (
+            <div key={s.key} className="flex items-center gap-3">
+              {idx > 0 && (
+                <span style={{ color: "var(--border)" }}>·</span>
+              )}
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs font-medium transition-colors duration-200"
+                style={{ color: "var(--text-tertiary)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-tertiary)")}
+              >
+                {s.icon} {s.label}
+              </a>
+            </div>
+          );
+        })}
       </motion.div>
 
       {/* Scroll hint */}

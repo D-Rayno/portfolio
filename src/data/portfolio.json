@@ -4,10 +4,11 @@
     "title": "Full Stack Web Developer",
     "tagline": "Building scalable web and mobile applications with modern technologies.",
     "email": "rayan03rezougui@gmail.com",
+    "phone": "+213 5 57 88 26 22",
     "github": "https://github.com/D-Rayno",
     "linkedin": "https://www.linkedin.com/in/rezougui-rayan-zin-eddine",
     "gitlab": "https://gitlab.com/rayan03rezougui",
-    "location": "Algeria",
+    "location": "Batna, Algeria",
     "available": true,
     "availableText": "Open to new opportunities",
     "bio": "I'm a Full Stack Developer based in Algeria with a deep passion for building digital products that are fast, beautiful, and maintainable. I specialize in React ecosystems, Node.js back-ends, and mobile applications with React Native.",
@@ -74,7 +75,7 @@
     "hobbies": ["Open-source contribution", "Writing technical articles", "Mentoring developers", "Exploring UX design"],
     "currentlyLearning": ["Rust", "WebAssembly", "Three.js"]
   },
-  "skills": [
+    "skills": [
     "Vue JS",
     "React JS",
     "Next JS",
@@ -89,6 +90,7 @@
     "Node JS",
     "Php",
     "Express JS",
+    "Adonis JS",
     "Laravel",
     "Supabase",
     "PostgreSQL",
@@ -99,19 +101,19 @@
   "skillsByCategory": [
     {
       "category": "Frontend",
-      "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "React Query"]
+      "items": ["React", "Next.js", "Vue.js", "Nuxt.js", "TypeScript", "JavaScript", "Tailwind CSS", "Ionic", "Framer Motion", "React Query"]
     },
     {
       "category": "Mobile",
-      "items": ["React Native", "Expo", "React Navigation"]
+      "items": ["React Native", "Expo", "React Navigation", "Ionic"]
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "PostgreSQL", "REST APIs", "GraphQL"]
+      "items": ["Node.js", "Express.js", "NestJS", "Laravel", "PHP", "Python", "Rust", "AdonisJS", "PostgreSQL", "MySQL", "Redis", "REST APIs", "GraphQL"]
     },
     {
       "category": "DevOps & Tools",
-      "items": ["Docker", "Git", "CI/CD", "Vercel", "Linux"]
+      "items": ["Git", "Docker", "Tauri", "Electron", "Odoo", "CI/CD", "Vercel", "Linux"]
     }
   ],
   "projects": [
@@ -119,7 +121,7 @@
       "id": "1",
       "title": "Fintech Dashboard",
       "description": "A centralized platform for managing financial accounts and simplifying user-to-user payments. Features real-time transaction tracking and analytics.",
-      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
       "category": "Web",
       "link": "#",
       "featured": true
@@ -128,7 +130,7 @@
       "id": "2",
       "title": "E-Learning Platform",
       "description": "An educational SaaS application featuring VOD and live-streaming capabilities for students and teachers. Supports 100+ concurrent users.",
-      "technologies": ["NestJS", "PostgreSQL", "Next.js"],
+      "technologies": ["NestJS", "PostgreSQL", "Next.js", "Docker", "Redis"],
       "category": "Web",
       "link": "#",
       "featured": true
@@ -137,16 +139,25 @@
       "id": "3",
       "title": "Real Estate Mobile App",
       "description": "A property browsing and booking app for Aymen Promotion's clients. Built with React Native for iOS and Android.",
-      "technologies": ["React Native", "Expo", "NestJS"],
+      "technologies": ["React Native", "Expo", "NestJS", "TypeScript"],
       "category": "Mobile",
       "link": "#",
       "featured": false
     },
     {
       "id": "4",
-      "title": "Dev Curriculum Builder",
-      "description": "An internal tool for creating and managing structured web development course syllabuses for the academy.",
-      "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
+      "title": "Custom CRM System",
+      "description": "A tailored CRM solution for a freelance client, featuring client management, project tracking, and automated invoicing.",
+      "technologies": ["Next.js", "Laravel", "MySQL", "Tailwind CSS"],
+      "category": "Web",
+      "link": "#",
+      "featured": false
+    },
+    {
+      "id": "5",
+      "title": "Real-time Chat Application",
+      "description": "A personal project focused on building a scalable, real-time messaging platform.",
+      "technologies": ["Node.js", "Socket.io", "React", "PostgreSQL"],
       "category": "Web",
       "link": "#",
       "featured": false
@@ -164,9 +175,62 @@
       "id": "e2",
       "role": "Software Engineer",
       "company": "Aymen Promotion",
-      "period": "Aug 2025 - Feb 2025",
-      "description": "Developing and maintaining internal software solutions and digital infrastructure for real estate development."
+      "location": "Alger",
+      "period": "Aug 2025 - Feb 2026",
+      "description": "Developing and maintaining internal software solutions and digital infrastructure for real estate development. Focus on full-stack web and mobile platforms."
+    },
+    {
+      "id": "e3",
+      "role": "Software Engineer",
+      "company": "BCD Pharma",
+      "location": "Alger",
+      "period": "Jul 2025 - Aug 2025",
+      "description": "Development and integration of customized Odoo modules to optimize pharmaceutical business processes."
+    },
+    {
+      "id": "e4",
+      "role": "Application Developer",
+      "company": "Originova",
+      "location": "Batna",
+      "period": "Dec 2024 - May 2025",
+      "description": "Development of innovative frontend solutions for web, mobile, and desktop applications, with a focus on user experience."
+    },
+    {
+      "id": "e5",
+      "role": "Full Stack Developer - Freelance",
+      "location": "Batna",
+      "period": "Sept 2023 - Jul 2025",
+      "description": "Creation of web and mobile applications, development of robust and secure APIs, customized CRM systems. Complete management of client projects."
     }
+  ],
+  "education": [
+    {
+      "id": "ed1",
+      "degree": "Master 1 - Digital Transformation and Innovation",
+      "institution": "Specialization in digital transformation and technological innovation"
+    },
+    {
+      "id": "ed2",
+      "degree": "Licence - Systèmes d'Information",
+      "institution": "Complete training in development and management of information systems"
+    }
+  ],
+  "languages": [
+    { "name": "Français", "proficiency": "9/10" },
+    { "name": "Arabe", "proficiency": "9/10" },
+    { "name": "Anglais", "proficiency": "7/10" }
+  ],
+  "interests": [
+    "Intelligence Artificielle",
+    "Machine Learning",
+    "Innovations Technologiques"
+  ],
+  "professionalQualities": [
+    "Autonome dans la gestion de projets complexes",
+    "Travail en équipe collaboratif et efficace",
+    "Détermination face aux défis techniques",
+    "Ambition d'innovation constante",
+    "Persévérance"
   ],
   "blog": [
     {
