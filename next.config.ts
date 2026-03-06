@@ -2,34 +2,84 @@ import type { NextConfig } from "next";
 import type { RuleSetRule } from "webpack";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
-    webpack(config) {
-    // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule: RuleSetRule) =>
-      rule.test instanceof RegExp && rule.test.test('.svg'),
-    )
+
+  // ── Turbopack (Next.js 16 dev server default) ─────────────────────────────
+  // `next dev` now uses Turbopack by default, which ignores the `webpack()`
+  // function below. SVG → React component handling must be declared here too.
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              // Keep viewBox so icons scale correctly
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: "preset-default",
+                    params: {
+                      overrides: {
+                        removeViewBox: false,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        ],
+        as: "*.js",
+      },
+    },
+  },
+
+  // ── Webpack (used by `next build` / production) ───────────────────────────
+  webpack(config) {
+    const fileLoaderRule = config.module.rules.find(
+      (rule: RuleSetRule) =>
+        rule.test instanceof RegExp && rule.test.test(".svg")
+    );
 
     config.module.rules.push(
-      // Reapply the existing rule, but only for svg imports ending in ?url
+      // Reapply the existing rule only for *.svg?url imports
       {
         ...fileLoaderRule,
         test: /\.svg$/i,
-        resourceQuery: /url/, // *.svg?url
+        resourceQuery: /url/,
       },
-      // Convert all other *.svg imports to React components
+      // All other *.svg imports → React component via SVGR
       {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
-        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: ['@svgr/webpack'],
-      },
-    )
+        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] },
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: "preset-default",
+                    params: {
+                      overrides: {
+                        removeViewBox: false,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      }
+    );
 
-    // Modify the file loader rule to ignore *.svg, since we have it handled now.
-    fileLoaderRule.exclude = /\.svg$/i
+    // Stop the default file-loader from also handling .svg
+    fileLoaderRule.exclude = /\.svg$/i;
 
-    return config
+    return config;
   },
 };
 

@@ -72,16 +72,22 @@
   ],
   "about": {
     "passion": "I'm driven by the intersection of performance engineering and delightful user experience. Code should be elegant — readable by humans, not just machines.",
-    "hobbies": ["Open-source contribution", "Writing technical articles", "Mentoring developers", "Exploring UX design"],
+    "hobbies": [
+      "Open-source contribution",
+      "Writing technical articles",
+      "Mentoring developers",
+      "Exploring UX design"
+    ],
     "currentlyLearning": ["Rust", "WebAssembly", "Three.js"]
   },
-    "skills": [
+  "skills": [
     "Vue JS",
     "React JS",
     "Next JS",
     "Nuxt JS",
     "React Native",
-    "Ionic & Capacitor",
+    "Ionic",
+    "Capacitor",
     "Tauri",
     "Odoo",
     "Python",
@@ -101,7 +107,18 @@
   "skillsByCategory": [
     {
       "category": "Frontend",
-      "items": ["React", "Next.js", "Vue.js", "Nuxt.js", "TypeScript", "JavaScript", "Tailwind CSS", "Ionic", "Framer Motion", "React Query"]
+      "items": [
+        "React",
+        "Next.js",
+        "Vue.js",
+        "Nuxt.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "Ionic",
+        "Framer Motion",
+        "React Query"
+      ]
     },
     {
       "category": "Mobile",
@@ -109,11 +126,34 @@
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "Express.js", "NestJS", "Laravel", "PHP", "Python", "Rust", "AdonisJS", "PostgreSQL", "MySQL", "Redis", "REST APIs", "GraphQL"]
+      "items": [
+        "Node.js",
+        "Express.js",
+        "NestJS",
+        "Laravel",
+        "PHP",
+        "Python",
+        "Rust",
+        "AdonisJS",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "REST APIs",
+        "GraphQL"
+      ]
     },
     {
       "category": "DevOps & Tools",
-      "items": ["Git", "Docker", "Tauri", "Electron", "Odoo", "CI/CD", "Vercel", "Linux"]
+      "items": [
+        "Git",
+        "Docker",
+        "Tauri",
+        "Electron",
+        "Odoo",
+        "CI/CD",
+        "Vercel",
+        "Linux"
+      ]
     }
   ],
   "projects": [
@@ -121,7 +161,13 @@
       "id": "1",
       "title": "Fintech Dashboard",
       "description": "A centralized platform for managing financial accounts and simplifying user-to-user payments. Features real-time transaction tracking and analytics.",
-      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL"
+      ],
       "category": "Web",
       "link": "#",
       "featured": true
