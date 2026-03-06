@@ -1,0 +1,54 @@
+{
+  "personal": {
+    "name": "REZOUGUI Rayan Zin Eddine",
+    "title": "Full Stack Web Developer",
+    "tagline": "Building scalable web and mobile applications with modern technologies.",
+    "email": "contact@example.com",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "location": "Algeria"
+  },
+  "about": "I am a passionate Full Stack Developer with a strong foundation in both front-end and back-end architectures. I enjoy creating seamless digital experiences, from interactive user interfaces to robust APIs and database schemas.",
+  "skills": [
+    "Next.js",
+    "React Native",
+    "TypeScript",
+    "NestJS",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Docker",
+    "Framer Motion"
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Fintech Dashboard",
+      "description": "A centralized platform for managing financial accounts and simplifying user-to-user payments.",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "link": "#"
+    },
+    {
+      "id": "2",
+      "title": "E-Learning Platform",
+      "description": "An educational SaaS application featuring VOD and live-streaming capabilities for students and teachers.",
+      "technologies": ["NestJS", "PostgreSQL", "Next.js"],
+      "link": "#"
+    }
+  ],
+  "experience": [
+    {
+      "id": "e1",
+      "role": "Web Development Teacher",
+      "company": "Private Academy",
+      "period": "Feb 2026 - Present",
+      "description": "Instructing beginner-level students in the fundamentals of web development, focusing on practical, hands-on projects."
+    },
+    {
+      "id": "e2",
+      "role": "Software Engineer",
+      "company": "Aymen Promotion",
+      "period": "Aug 2025 - Present",
+      "description": "Developing and maintaining internal software solutions and digital infrastructure for real estate development."
+    }
+  ]
+}
