@@ -6,9 +6,73 @@
     "email": "contact@example.com",
     "github": "https://github.com/yourusername",
     "linkedin": "https://linkedin.com/in/yourusername",
-    "location": "Algeria"
+    "location": "Algeria",
+    "available": true,
+    "availableText": "Open to new opportunities",
+    "bio": "I'm a Full Stack Developer based in Algeria with a deep passion for building digital products that are fast, beautiful, and maintainable. I specialize in React ecosystems, Node.js back-ends, and mobile applications with React Native.",
+    "bioLong": "I started coding at 17, driven by curiosity about how websites worked. Over the years I've grown from building simple HTML pages to architecting full-stack SaaS platforms with real-time features, complex data pipelines, and polished mobile apps.\n\nI believe that great software is invisible — it gets out of the user's way and just works. I apply that principle to every project I take on, whether it's a fintech dashboard with thousands of daily users or a teaching curriculum designed to inspire the next generation of developers.\n\nWhen I'm not coding, I'm writing about what I learn, mentoring students, or exploring new technologies that challenge my assumptions.",
+    "photo": "/avatar-placeholder.jpg"
   },
-  "about": "I am a passionate Full Stack Developer with a strong foundation in both front-end and back-end architectures. I enjoy creating seamless digital experiences, from interactive user interfaces to robust APIs and database schemas.",
+  "stats": [
+    { "id": "s1", "value": "2+", "label": "Years of Experience" },
+    { "id": "s2", "value": "10+", "label": "Projects Delivered" },
+    { "id": "s3", "value": "15+", "label": "Students Taught" },
+    { "id": "s4", "value": "5+", "label": "Technologies Mastered" }
+  ],
+  "services": [
+    {
+      "id": "sv1",
+      "icon": "Monitor",
+      "title": "Web Development",
+      "description": "End-to-end web applications built with Next.js, TypeScript, and modern tooling. From landing pages to complex SaaS platforms."
+    },
+    {
+      "id": "sv2",
+      "icon": "Smartphone",
+      "title": "Mobile Apps",
+      "description": "Cross-platform mobile applications with React Native. Native-feel UX with a single shared codebase for iOS and Android."
+    },
+    {
+      "id": "sv3",
+      "icon": "Server",
+      "title": "Backend & APIs",
+      "description": "Scalable REST and GraphQL APIs built with NestJS and PostgreSQL. Clean architecture, authentication, and real-time capabilities."
+    },
+    {
+      "id": "sv4",
+      "icon": "BookOpen",
+      "title": "Teaching & Mentoring",
+      "description": "Structured web development courses for beginners. Hands-on, project-based curriculum that builds real-world confidence."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Aymen Benali",
+      "role": "CEO, Aymen Promotion",
+      "avatar": "AB",
+      "text": "Rayan delivered our internal platform ahead of schedule with exceptional attention to detail. His ability to translate business requirements into clean technical solutions is remarkable."
+    },
+    {
+      "id": "t2",
+      "name": "Sara Khelil",
+      "role": "Student, Private Academy",
+      "avatar": "SK",
+      "text": "Rayan's teaching style is clear, patient, and deeply practical. I went from zero to building my own portfolio website in just a few weeks."
+    },
+    {
+      "id": "t3",
+      "name": "Karim Mansouri",
+      "role": "Freelance Designer",
+      "avatar": "KM",
+      "text": "Working with Rayan on a joint client project was seamless. He's communicative, writes clean code, and always ships on time. Would collaborate again."
+    }
+  ],
+  "about": {
+    "passion": "I'm driven by the intersection of performance engineering and delightful user experience. Code should be elegant — readable by humans, not just machines.",
+    "hobbies": ["Open-source contribution", "Writing technical articles", "Mentoring developers", "Exploring UX design"],
+    "currentlyLearning": ["Rust", "WebAssembly", "Three.js"]
+  },
   "skills": [
     "Next.js",
     "React Native",
@@ -19,20 +83,60 @@
     "Docker",
     "Framer Motion"
   ],
+  "skillsByCategory": [
+    {
+      "category": "Frontend",
+      "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "React Query"]
+    },
+    {
+      "category": "Mobile",
+      "items": ["React Native", "Expo", "React Navigation"]
+    },
+    {
+      "category": "Backend",
+      "items": ["NestJS", "Node.js", "PostgreSQL", "Prisma", "REST APIs", "GraphQL"]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": ["Docker", "Git", "CI/CD", "Vercel", "Linux"]
+    }
+  ],
   "projects": [
     {
       "id": "1",
       "title": "Fintech Dashboard",
-      "description": "A centralized platform for managing financial accounts and simplifying user-to-user payments.",
+      "description": "A centralized platform for managing financial accounts and simplifying user-to-user payments. Features real-time transaction tracking and analytics.",
       "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
-      "link": "#"
+      "category": "Web",
+      "link": "#",
+      "featured": true
     },
     {
       "id": "2",
       "title": "E-Learning Platform",
-      "description": "An educational SaaS application featuring VOD and live-streaming capabilities for students and teachers.",
+      "description": "An educational SaaS application featuring VOD and live-streaming capabilities for students and teachers. Supports 100+ concurrent users.",
       "technologies": ["NestJS", "PostgreSQL", "Next.js"],
-      "link": "#"
+      "category": "Web",
+      "link": "#",
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Real Estate Mobile App",
+      "description": "A property browsing and booking app for Aymen Promotion's clients. Built with React Native for iOS and Android.",
+      "technologies": ["React Native", "Expo", "NestJS"],
+      "category": "Mobile",
+      "link": "#",
+      "featured": false
+    },
+    {
+      "id": "4",
+      "title": "Dev Curriculum Builder",
+      "description": "An internal tool for creating and managing structured web development course syllabuses for the academy.",
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL"],
+      "category": "Web",
+      "link": "#",
+      "featured": false
     }
   ],
   "experience": [
@@ -49,6 +153,35 @@
       "company": "Aymen Promotion",
       "period": "Aug 2025 - Present",
       "description": "Developing and maintaining internal software solutions and digital infrastructure for real estate development."
+    }
+  ],
+  "blog": [
+    {
+      "id": "b1",
+      "title": "Why I switched from Tailwind v3 to v4",
+      "excerpt": "Tailwind CSS v4 brings a completely new architecture. Here's what changed, what broke, and why I think it's worth the migration.",
+      "date": "2026-02-15",
+      "readTime": "5 min read",
+      "tags": ["CSS", "Tailwind", "Frontend"],
+      "slug": "tailwind-v4-migration"
+    },
+    {
+      "id": "b2",
+      "title": "Building scroll-driven animations with Framer Motion",
+      "excerpt": "A deep dive into useScroll, useSpring, and useTransform — the trio that powers every great scroll animation I've built.",
+      "date": "2026-01-28",
+      "readTime": "8 min read",
+      "tags": ["Animation", "React", "Framer Motion"],
+      "slug": "scroll-animations-framer-motion"
+    },
+    {
+      "id": "b3",
+      "title": "NestJS architecture patterns I actually use",
+      "excerpt": "Forget the docs' toy examples. Here are the real patterns — modules, interceptors, guards — that keep large NestJS codebases sane.",
+      "date": "2026-01-10",
+      "readTime": "10 min read",
+      "tags": ["NestJS", "Backend", "Architecture"],
+      "slug": "nestjs-architecture-patterns"
     }
   ]
 }
