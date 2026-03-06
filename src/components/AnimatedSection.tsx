@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { ReactNode } from "react";
 
 interface AnimatedSectionProps {
@@ -9,6 +9,19 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 48 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      delay,
+      ease: easeInOut,
+    },
+  }),
+};
+
 export default function AnimatedSection({
   children,
   className = "",
@@ -16,10 +29,11 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      variants={sectionVariants}
+      custom={delay}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
       className={className}
     >
       {children}
